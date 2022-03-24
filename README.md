@@ -299,6 +299,37 @@ This repo contains the study notes for API, API testing with Postman and Automat
     - Collection in Postman means a group of API requests that are already saved in the Postman and can be arranged into folders. A number of folders can be created inside a collection.
     - Putting together similar requests into folders and collections helps the client in better organisation and documentation of their requests.
     - All the API requests can be stored and saved within a collection and these collections can be shared amongst the team in the Postman workspace.
+    - Hold collections of all types of requests 
+  
+  ```
+    Create folders in Collections
+    GET
+    POST
+
+    Use fake API - https://reqres.in/
+    use web url syntax
+    protocol://domainName:8080//request/queryParamter
+
+    1. Take endpoint /api/users=2
+    2. Type this in Postman and use get method : 
+        https://reqres.in/api/users?page=2
+      protocol  domain     endpoint queryParameter
+      - Status 200 means get request is successful
+    
+    GET request practice
+    
+  ```
+  - (Do practice for all the queries )[https://reqres.in/] and save each request under folder
+    - Make sure the response you get the correct.
+    - <img src=".\img\l4_1_postman_queries_exercises.PNG">
+  
+  ```
+      ListUsers               https://reqres.in/api/users?page=2
+      Single User             https://reqres.in/api/data?id=2
+      Single User Not Found   https://reqres.in/api/data?id=23
+      List <Resource>         https://reqres.in/api/page?resource=unknown 
+      Single <Resource>       https://reqres.in/api/data/unknown/data?id=2
+  ```
   - Variables 
   - Environment 
 
@@ -309,7 +340,7 @@ This repo contains the study notes for API, API testing with Postman and Automat
 <details>
   <summary>Lesson - 2 </summary>
 
-- <img src=".\img\">
+  - <img src=".\img\">
 
 </details>
 
