@@ -330,6 +330,21 @@ This repo contains the study notes for API, API testing with Postman and Automat
       List <Resource>         https://reqres.in/api/page?resource=unknown 
       Single <Resource>       https://reqres.in/api/data/unknown/data?id=2
   ```
+  - POST
+    - Create - Since you are creating, you need to add data. 
+    - Go to Body --> raw --> JSON --> add the information in there
+    - If successful, status code should be 201. You should be the following.
+      ```
+        {
+          "name": "morpheus",
+          "job": "leader",
+          "id": "285",
+          "createdAt": "2022-03-24T23:52:27.469Z"
+        }
+
+      ```
+  - PUT 
+    - If successful, it will be updated and you should see **updatedAt** "updatedAt": "2022-03-25T00:02:39.330Z".
   - Variables 
   - Environment 
 
