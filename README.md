@@ -509,7 +509,9 @@ This repo contains the study notes for API, API testing with Postman and Automat
 - JavaCollection Framework
   - List Interface
   - Map Interface
-- <img src=".\img\">
+- Download JDK
+- [Download Intellij Idea](https://www.jetbrains.com/idea/download/#section=windows) 
+- 
 
 </details>
 <hr>
@@ -601,9 +603,100 @@ This repo contains the study notes for API, API testing with Postman and Automat
 
 ```
 
+- [Add TestNG dependency](https://mvnrepository.com/artifact/org.testng/testng/6.14.3)
+
 - TestNG concept
 - Annoation for TestNG
-- <img src=".\img\">
+
+```
+    <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mycompany.restapi</groupId>
+    <artifactId>RestAssured</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.4.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
+
+
+</project>
+
+```
+
+- Testing.xml
+
+  ```
+  <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+  <suite name="All Test Suite">
+      <test verbose="2" preserve-order="true" name="First Test Case">
+          <classes>
+              <class name="Test_1_TestCases"/>
+          </classes>
+      </test>
+
+      <listeners>
+          <listener class-name="org.testng.reporters.EmailableReporter"/>
+          <listener class-name="org.testng.reporters.FailedReporter"/>
+      </listeners>
+    </suite>
+
+  ```
+  - Create package in test\java folder
+  - Inside this newly created folder, create a class
+  - TestNG
+    - control execution
+    - Annotation before
+    - Annotation after 
+    - @Test use **public static void main**, therefore, you do not need main method 
+  - Create class under that package
+    - You can enable or disable the @Test by adding (enabled=false) or (enabled=true)
+    - [(Add getRequest() and postRequest()](././javaProjects/Maven_TestNG/src/test/java/RestApiAutomate/RestApiAutomate.java)
+    - getRequest()
+      - for this method, you are only getting the information. 
+        - url
+        - response
+        - After getting response, validate it.
+        - For validation, need to go through json object and Assert.assertEquals
+      - postRequest()
+        - Compare it with Postman : Three things you will need => url, contentType and body
+      - Reporter is for generating the report. 
+        - In the test-output folder after you run TestNG, find emailable-report.html.
+
 
 </details>
 <hr>
